@@ -1,0 +1,51 @@
+
+{% load staticfiles %}
+<!-- Cabecera -->
+<header class="masthead"
+ style="background-image: url('{% block background %}{% endblock%}')">
+ <div class="overlay"></div>
+ <div class="container">
+ <div class="row">
+ <div class="col-lg-8 col-md-10 mx-auto">
+ <div class="site-heading">
+ {% block headers %}{% endblock %}
+ </div>
+ </div>
+ </div>
+ </div>
+</header>
+<title>{% block title %}{% endblock %} | Javi Pozo
+    (Ingeniero)</title>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'home' %}">Portada</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'about' %}">Acerca
+       de</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'portfolio' %}">Portafolio</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'contact' %}">Contacto</a>
+        </li>
+        </ul>
+       </div>
+       <a class="navbar-brand" href="{% url 'home' %}">Javi Pozo</a>
+    
+       <script src='/core/static/core/vendor/jquery/jquery.min.js'></script>
+       <script src='/core/static/core/vendor/bootstrap/js/bootstrap.bundle.min.js'></script>
+       <script src='/core/static/core/js/clean-blog.min.js'></script>
+    <!-- Contenido -->
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+    {% if request.path != "/" %}<hr>{% endif %}
+
+       <!-- Bootstrap y Javascripts -->
+       {% load static %}
+       <script src='/core/static/core/vendor/jquery/jquery.min.js'></script>
+       <script src='/core/static/core/vendor/bootstrap/js/bootstrap.bundle.min.js'></script>
+       <script src='/core/static/core/js/clean-blog.min.js'></script>
